@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="543.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chat.controller.ChatPageController">
+    <children>
+        <StackPane layoutY="57.0" prefHeight="486.0" prefWidth="332.0">
+            <children>
+                <Pane fx:id="profile" prefHeight="484.0" prefWidth="327.0" style="-fx-background-color: #F3F3F3;">
+                    <children>
+                        <Label layoutX="26.0" layoutY="90.0" text="User Name: " textFill="#686565">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="123.0" text="Phone No:" textFill="#686565">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="147.0" prefHeight="34.0" prefWidth="74.0" text="Gender:" textFill="#686565">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="fullName" layoutX="119.0" layoutY="90.0" textFill="#a8a2a2">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="phoneNo" layoutX="120.0" layoutY="123.0" textFill="#a8a2a2">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="gender" layoutX="120.0" layoutY="147.0" prefHeight="34.0" prefWidth="74.0" textFill="#a8a2a2">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <ImageView fx:id="proImage" fitHeight="84.0" fitWidth="83.0" layoutX="233.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/Vector6.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="28.0" layoutY="188.0" text="Change Profile Picture:" textFill="#686565">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="fileChoosePath" editable="false" layoutX="29.0" layoutY="222.0" prefHeight="27.0" prefWidth="166.0" promptText="Choose Image..." style="-fx-background-color: #455a64; -fx-background-radius: 7;" styleClass="Chooser" stylesheets="@style/style.css">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </TextField>
+                        <JFXButton buttonType="RAISED" layoutX="114.0" layoutY="280.0" onAction="#saveImage" prefHeight="31.0" prefWidth="107.0" ripplerFill="#5a7682" style="-fx-background-color: #455a64; -fx-background-radius: 10;" text="Save" textFill="WHITE">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="224.0" layoutY="220.0" onAction="#chooseImageButton" prefHeight="20.0" prefWidth="77.0" style="-fx-background-color: #455a64; -fx-background-radius: 30;" text="Choose" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </Pane>
+                <Pane fx:id="chat" prefHeight="494.0" prefWidth="332.0" style="-fx-background-color: FFFFFF;">
+                    <children>
+                        <ScrollPane fx:id="emojiScroller" layoutX="16.0" layoutY="312.0" prefHeight="110.0" prefWidth="238.0" style="-fx-background-radius: 20;">
+                            <content>
+                                <AnchorPane fx:id="emojiPane" prefHeight="110.0" prefWidth="238.0" style="-fx-background-color: #FFFF; -fx-background-radius: 20;" />
+                            </content>
+                        </ScrollPane>
+                        <Line endX="231.0" layoutX="100.0" layoutY="4.0" startX="-100.0" stroke="#bec0c9" />
+                        <TextField fx:id="msgField" layoutX="21.0" layoutY="437.0" onKeyPressed="#sendMessageByKey" prefHeight="33.0" prefWidth="238.0" promptText="Type a message here..." style="-fx-background-radius: 90; -fx-border-color: #EFEEEE; -fx-background-color: #EFEEEE;" />
+                        <Circle fill="#44d7b6" layoutX="295.0" layoutY="454.0" radius="19.0" stroke="#44d7b6" strokeType="INSIDE" />
+                        <ImageView fitHeight="28.0" fitWidth="20.0" layoutX="284.0" layoutY="444.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/Vector1.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="228.0" layoutY="444.0" onMousePressed="#selectImage" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/Vector2.png" />
+                            </image>
+                        </ImageView>
+                        <ScrollPane prefHeight="424.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF;">
+                            <content>
+                                <VBox fx:id="vBox" prefHeight="424.0" prefWidth="289.0" style="-fx-background-color: #FFFFFF;" translateX="18.0" />
+                            </content>
+                        </ScrollPane>
+<!--                        <ImageView fx:id="emojiBtn" fitHeight="17.0" fitWidth="20.0" layoutX="201.0" layoutY="446.0" onMousePressed="#selectEmoji" pickOnBounds="true" preserveRatio="true">-->
+<!--                            <image>-->
+<!--                                <Image url="@assets/emoji.png" />-->
+<!--                            </image>-->
+<!--                        </ImageView>-->
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+        <AnchorPane prefHeight="55.0" prefWidth="332.0" style="-fx-background-color: #070F2B;">
+            <children>
+                <Circle fx:id="showProPic" fill="#44d7b6" layoutX="47.0" layoutY="29.0" radius="19.0" stroke="#44d7b6" strokeType="INSIDE" />
+                <Label fx:id="clientName" layoutX="72.0" layoutY="-6.0" prefHeight="48.0" prefWidth="89.0" style="-fx-text-fill: ffff;" text="Username">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="55.0" layoutY="29.0" prefHeight="17.0" prefWidth="70.0" style="-fx-text-fill: ffff;" text="Active">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="14.0" fitWidth="24.0" layoutX="243.0" layoutY="21.0">
+                    <image>
+                        <Image url="@assets/Vector3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="213.0" layoutY="20.0">
+                    <image>
+                        <Image url="@assets/Vector4.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="17.0" fitWidth="24.0" layoutX="287.0" layoutY="25.0" preserveRatio="true">
+                    <image>
+                        <Image url="@assets/d.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="9.0" layoutY="19.0" preserveRatio="true">
+                    <image>
+                        <Image url="@assets/Vector5.png" />
+                    </image>
+                </ImageView>
+                <Circle fill="#84ff00" layoutX="114.0" layoutY="39.0" radius="3.0" stroke="#80ff00" strokeType="INSIDE" strokeWidth="2.0" />
+<!--                <JFXButton fx:id="profileBtn" layoutX="280.0" layoutY="7.0" onAction="#handleProfileBtn" prefHeight="36.0" prefWidth="38.0" text="." textFill="#bec0c9">-->
+<!--                    <font>-->
+<!--                        <Font />-->
+<!--                    </font>-->
+<!--                </JFXButton>-->
+            </children>
+        </AnchorPane>
+    </children>
+
+
+</AnchorPane>

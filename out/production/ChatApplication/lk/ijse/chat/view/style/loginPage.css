@@ -1,0 +1,17 @@
+.text-field{
+    -fx-border-radius: 5px;
+}
+
+.background-color{
+    -fx-background-color: #070F2B;
+}
+
+.sing-button {
+    /*-fx-background-color: #7fff00;*/
+    /*-fx-background-color: #a6f5fe;*/
+    -fx-text-fill: #a6f5fe;
+}
+
+.button {
+    -fx-background-color: #7fff00;
+}

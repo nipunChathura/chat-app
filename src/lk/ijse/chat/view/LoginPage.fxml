@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chat.controller.LoginController">
+   <children>
+      <AnchorPane fx:id="footerBar" layoutY="500.0" prefHeight="100.0" prefWidth="400.0" styleClass="background-color" stylesheets="@style/loginPage.css">
+         <children>
+            <Label fx:id="footerText" layoutX="51.0" layoutY="40.0" prefHeight="21.0" prefWidth="170.0" text="Dont't have an account.?" textFill="#908888" />
+            <Label fx:id="btnSign" layoutX="221.0" layoutY="40.0" onMouseClicked="#changeScreen" prefHeight="21.0" prefWidth="63.0" styleClass="sing-button" stylesheets="@style/loginPage.css" text="Sign Up" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="singUpPage" prefHeight="500.0" prefWidth="400.0" styleClass="background-color" stylesheets="@style/loginPage.css">
+         <children>
+            <JFXTextField fx:id="txtUsernameSignUp" focusColor="CHARTREUSE" layoutX="40.0" layoutY="159.0" onKeyPressed="#validateForm" prefHeight="44.0" prefWidth="320.0" promptText="Username" styleClass="text-field" stylesheets="@style/loginPage.css">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPasswordSignUp" focusColor="CHARTREUSE" layoutX="40.0" layoutY="222.0" onKeyPressed="#validateForm" prefWidth="320.0" promptText="Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="99.0" layoutY="43.0" prefHeight="31.0" prefWidth="202.0" text="Chat Room" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="119.0" prefHeight="31.0" prefWidth="202.0" text="Create Your Account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnSignUp" layoutX="220.0" layoutY="444.0" onAction="#singUp" prefHeight="31.0" prefWidth="105.0" text="Sign Up" />
+            <JFXTextField fx:id="txtPhoneNumberSignUp" focusColor="CHARTREUSE" layoutX="40.0" layoutY="282.0" onKeyPressed="#validateForm" prefWidth="320.0" promptText="Phone Number">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXRadioButton fx:id="male" layoutX="125.0" layoutY="347.0" onMouseClicked="#selectGender" text="Male">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="female" layoutX="236.0" layoutY="347.0" onMouseClicked="#selectGender" text="Female">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXRadioButton>
+            <Label layoutX="41.0" layoutY="347.0" text="Gender">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="singInPage" prefHeight="500.0" prefWidth="400.0" styleClass="background-color" stylesheets="@style/loginPage.css">
+         <children>
+            <JFXTextField fx:id="txtUsername" focusColor="CHARTREUSE" labelFloat="true" layoutX="40.0" layoutY="295.0" onKeyPressed="#validateSingInPage" prefHeight="31.0" prefWidth="320.0" promptText="Username" styleClass="text-field" stylesheets="@style/loginPage.css">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPassword" focusColor="CHARTREUSE" labelFloat="true" layoutX="41.0" layoutY="372.0" onKeyPressed="#validateSingInPage" prefWidth="320.0" promptText="Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="99.0" layoutY="153.0" prefHeight="31.0" prefWidth="202.0" text="Chat Room" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="229.0" prefHeight="31.0" prefWidth="202.0" text="Login Your Account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnLogin" layoutX="220.0" layoutY="444.0" onAction="#login" prefHeight="31.0" prefWidth="105.0" text="Login" />
+            <ImageView fitHeight="117.0" fitWidth="170.0" layoutX="142.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/chat.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
